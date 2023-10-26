@@ -7,6 +7,9 @@ import '../models/weather_model.dart';
 
 class WeatherService {
   static const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+  static const BASE_URL_Forecast =
+      "https://api.openweathermap.org/data/2.5/forecast";
+
   final String apiKey;
 
   WeatherService(this.apiKey);
@@ -19,6 +22,18 @@ class WeatherService {
       return Weather.fromJson(jsonDecode(response.body));
     } else {
       throw Exception("Failed to load weather data");
+    }
+  }
+
+  Future<Forecast> getForecast(String cityName) async {
+    final response = await http.get(
+        Uri.parse('$BASE_URL_Forecast?q=$cityName&appid=$apiKey&units=metric'));
+
+    if (response.statusCode == 200) {
+      // print("Response:" + response.body);
+      return Forecast.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception("Failed to load forecast data");
     }
   }
 
