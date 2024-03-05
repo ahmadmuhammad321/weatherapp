@@ -1,6 +1,8 @@
 # weather
 
-A new Flutter project.
+A Weather App using OpenWeather Free API service, that provides realtime weather updates and weather forecast by automatically detecting correct location of a device.
+
+[![Whats-App-Image-2024-03-05-at-17-55-25-42afde7e.jpg](https://i.postimg.cc/wvKQPtPS/Whats-App-Image-2024-03-05-at-17-55-25-42afde7e.jpg)](https://postimg.cc/DWgG4z7g)
 
 ## Getting Started
 
